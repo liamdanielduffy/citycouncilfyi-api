@@ -456,7 +456,6 @@ class LegistarAPIEventScraperZip(LegistarAPIEventScraperBase):
         # breakpoint()
         for event, _ in self._webscraper.events(follow_links=False):
             event_key = self._event_key(event, self._webscraper)
-            print(event, event_key)
             yield event_key, event
 
     def _event_key(self, event, web_scraper):
