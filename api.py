@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
 from legistarnyc import base, events
+import warnings
 
+# we make https requests to the city council website, which creates lots of noise in logs
+warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 
 app = Flask(__name__)
 
