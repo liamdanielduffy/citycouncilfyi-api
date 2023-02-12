@@ -13,6 +13,9 @@ import lxml.html
 import lxml.etree as etree
 import pytz
 
+from dotenv import load_dotenv
+load_dotenv()
+
 API_KEY = os.environ['LEGISTAR_API_KEY']
 BASE_URL = 'https://webapi.legistar.com/v1/nyc'
 
