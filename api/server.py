@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from datetime import datetime
 from legistarnyc import base, events
 import warnings
@@ -37,6 +37,9 @@ def hi():
 def get_past_events():
     gte_date = request.json['date']
     past_events = list_past_events_until(gte_date)
+    response = make_response(jsonify({'past_events': past_events}))
+    # cache up to a day, return stale responses while revalidating within a day + 2 minutes
+    resp.headers["Cache-Control"] = "s-maxage=86400, stale-while-revalidate=86559"
     return jsonify({'past_events': past_events})
 
 if __name__ == '__main__':
