@@ -26,6 +26,10 @@ eventsScraper = events.LegistarAPIEventScraperZip()
 
 app = Flask(__name__)
 
+@app.route('/')
+def hi():
+    return 'hi'
+
 @app.route('/events_on_or_after', methods=['POST'])
 def get_past_events():
     gte_date = request.json['date']
