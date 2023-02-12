@@ -3,6 +3,7 @@
 from datetime import datetime, date, timedelta
 import requests
 from legistarnyc import base, events
+import pytz
 # from scraperlegistar import LegistarAPIScraper, LegistarEventsScraper
 
 
@@ -140,8 +141,10 @@ test = {
     }
     }
 
+
+tz = pytz.timezone('US/Eastern')
 # why is this the event key? Why not just use the EventID? I guess because there IS NO EventID on the web interface. OF course...
-event_key = ('Subcommittee on Zoning and Franchises', datetime(2023, 1, 24, 10, 0, tzinfo='EST'))
+event_key = ('Subcommittee on Zoning and Franchises', datetime(2023, 1, 24, 10, 0, tzinfo=tz))
 
 
 # event_details = eventsScraper.web_detail(example)
