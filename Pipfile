@@ -11,6 +11,7 @@ pytz = "*"
 python-dotenv = "*"
 esprima = "*"
 icalendar = "*"
+flask = "*"
 
 [dev-packages]
 
