@@ -8,6 +8,9 @@ requests = "*"
 scrapelib = "*"
 lxml = "*"
 pytz = "*"
+python-dotenv = "*"
+esprima = "*"
+icalendar = "*"
 
 [dev-packages]
 
