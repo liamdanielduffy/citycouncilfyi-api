@@ -1,0 +1,1 @@
+gcloud run deploy --source ./ --set-env-vars $(cat .env | tr '\n' ',')
