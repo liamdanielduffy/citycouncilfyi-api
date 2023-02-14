@@ -12,6 +12,7 @@ python-dotenv = "*"
 esprima = "*"
 icalendar = "*"
 flask = "*"
+gunicorn = "*"
 
 [dev-packages]
 
